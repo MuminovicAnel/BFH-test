@@ -11,6 +11,11 @@ export class AppComponent {
 
 
   setLabelText(value: string) {
-    this.changeText = value;
+    console.log(value)
+    if (value === "") {
+      this.changeText = "write something in the input field to change this label";
+    } else {
+      this.changeText = value;
+    }
   }
 }

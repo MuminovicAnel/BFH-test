@@ -1,17 +1,43 @@
-<mat-toolbar>
-  <mat-toolbar>
-    <h1>BFH</h1>
-    <div>
-
-    </div>
-  </mat-toolbar>
-
+<mat-toolbar color="primary">
+  <h1>BFH</h1>
 </mat-toolbar>
 
-<div id="task1">
-  <label name="changeText">{{changeText}}</label>
-  <mat-form-field class="full-width">
-    <input matInput type="text" [(ngModel)]="inputText" (ngModelChange)="setLabelText($event)">
-  </mat-form-field>
+<div id="task2">
+  <mat-tab-group animationDuration="0ms" dynamicHeight>
+    <mat-tab label="Home">
+      <div id="task1">
+        <label name="changeText">{{changeText}}</label>
+        <mat-form-field class="full-width">
+          <input matInput type="text" [(ngModel)]="inputText" (ngModelChange)="setLabelText($event)">
+        </mat-form-field>
+      </div>
+    </mat-tab>
+    <mat-tab label="Tab 1">
+      <div id="task1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Interdum posuere lorem ipsum dolor sit
+        amet.
+        Euismod lacinia at quis risus sed vulputate odio ut. Aliquam malesuada bibendum arcu vitae.
+        Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Gravida cum sociis natoque penatibus et magnis dis
+        parturient montes.
+        Gravida neque convallis a cras semper auctor neque vitae. Bibendum neque egestas congue quisque. Porta nibh
+        venenatis cras sed.
+        Urna et pharetra pharetra massa massa ultricies. Urna molestie at elementum eu facilisis sed odio morbi quis.
+        Amet justo donec enim diam vulputate ut pharetra sit.
+        Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Non enim praesent elementum facilisis leo. Sodales
+        ut eu sem integer vitae.
+        Pharetra magna ac placerat vestibulum lectus mauris ultrices. Sed felis eget velit aliquet sagittis id.
+        Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.
+        Duis at tellus at urna condimentum mattis.
+      </div>
+    </mat-tab>
+    <mat-tab label="Tab 2">
+      <div id="task1">
+        The Berne University of Applied Sciences has around 7,000 students and is one of the medium-sized Swiss universities.
+        It offers 30 bachelor's and 23 master's degree programs and various continuing education courses.
+        About 10% of the students come from abroad, and women make up 48% of the university's student body.
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
-
