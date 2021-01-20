@@ -19,6 +19,10 @@ export class AppComponent {
   public isIntegerText = false;
 
 
+  /**
+   * Changes the label everytime the user type in the input field.
+   * @param value Input text
+   */
   public setLabelText = (value: string): void => {
     if (value === '') {
       this.changeText = 'write something in the input field to change this label';
@@ -28,7 +32,7 @@ export class AppComponent {
         this.checkLength,
         this.isInteger
       )(value);
-      console.log(newValueValidator(value));
+
       if (newValueValidator(value)) {
         this.changeText = value;
       } else {
@@ -37,6 +41,11 @@ export class AppComponent {
     }
   }
 
+  /**
+   * Validates the input text.
+   * @param value Input text
+   * @returns message
+   */
   public validateInput = (value: string): string => {
     if (!this.checkLength(value) && !this.isNumberInString(value)) {
       return 'the inserted text is too short and it does not contain a 9';
@@ -47,21 +56,32 @@ export class AppComponent {
     return 'validated';
   }
 
+  /**
+   * Checks if the input text is an integer.
+   * @param value Input text
+   */
   private isInteger = (value: string): boolean => {
     this.isIntegerText = Number.isInteger(+value);
     return Number.isInteger(+value);
   }
 
+  /**
+   * Checks if the lenght of the input texz is at least 3 characters long.
+   * @param value Input text
+   */
   private checkLength = (value: string): boolean => {
     if (value && value.length < 3) {
       this.isLongEnoughText = false;
       return false;
     }
-    console.log(this.isLongEnoughText);
     this.isLongEnoughText = true;
     return true;
   }
 
+  /**
+   * Checks if there is a 9 in the input text.
+   * @param value Input text
+   */
   private isNumberInString = (value: string): boolean => {
     this.isNumberInStringText = value.includes('9');
     return value.includes('9');
