@@ -6,10 +6,21 @@
   <mat-tab-group animationDuration="0ms" dynamicHeight>
     <mat-tab label="Home">
       <div id="task1">
+        <h2>Task 1</h2>
         <label name="changeText">{{changeText}}</label>
         <mat-form-field class="full-width">
           <input matInput type="text" [(ngModel)]="inputText" (ngModelChange)="setLabelText($event)">
         </mat-form-field>
+        <p *ngIf="!isNumberInStringText && inputText != ''" class="alert">
+          The given string needs to contain at least a 9.
+        </p>
+        <p *ngIf="!isLongEnoughText && inputText != ''" class="alert">
+          The given string needs to be at least 3 characters long.
+        </p>
+        <p *ngIf="!isIntegerText && inputText != ''" class="alert">
+          The given string needs to be an integer.
+        </p>
+
       </div>
     </mat-tab>
     <mat-tab label="Tab 1">
@@ -34,7 +45,8 @@
     </mat-tab>
     <mat-tab label="Tab 2">
       <div id="task1">
-        The Berne University of Applied Sciences has around 7,000 students and is one of the medium-sized Swiss universities.
+        The Berne University of Applied Sciences has around 7,000 students and is one of the medium-sized Swiss
+        universities.
         It offers 30 bachelor's and 23 master's degree programs and various continuing education courses.
         About 10% of the students come from abroad, and women make up 48% of the university's student body.
       </div>
